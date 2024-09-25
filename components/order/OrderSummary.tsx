@@ -13,7 +13,7 @@ export default function OrderSummary() {
     <aside className="lg:h-screen lg:overflow-y-scroll md:w-64 lg:w-96 p-5">
       <h1 className="text-4xl text-center font-black">Mi Pedido</h1>
 
-      {order.length === 0 ? <p className="text-center my-10">El carrito esta vacio</p> : (
+      {order.length === 0 ? <p className="text-center my-10">El pedido esta vacio</p> : (
         <div className="mt-5">
           {order.map(item => (
             <ProductsDetails
@@ -25,6 +25,17 @@ export default function OrderSummary() {
             Total a pagar: {''}
             <span className="font-bold">{formatCurrency(total)}</span>
           </p>
+          <form 
+             className="w-full mt-10 space-y-5"
+        
+          >
+            <input
+              type="submit"
+              className="py-2 rounded uppercase text-white bg-black text-center cursor-pointer w-full font-bold"
+              value='Confirmar Pedido'
+            />
+
+          </form>
         </div>
       )}
     </aside>
